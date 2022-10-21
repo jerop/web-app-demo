@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app-demo
+  template:
+    metadata:
+      labels:
+        app: web-app-demo
+    spec:
+      containers:
+      - name: web-app-demo
+        image: us-east1-docker.pkg.dev/leebernick-test/codelab/web-app-demo
